@@ -19,7 +19,7 @@ public class DressMapper implements RowMapper<Dress> {
 		dress.setColour(rs.getString("colour"));
 		dress.setBrand(rs.getString("brand"));
 		dress.setType(rs.getString("type"));
-		dress.setSize(rs.getString("size"));
+		dress.setSize(rs.getString("dsize"));
 		dress.setCategory(rs.getString("category"));
 		dress.setPrice(rs.getDouble("price"));
 		return dress;
