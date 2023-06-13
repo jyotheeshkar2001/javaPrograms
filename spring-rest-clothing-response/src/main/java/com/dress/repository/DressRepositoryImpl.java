@@ -21,8 +21,8 @@ public class DressRepositoryImpl implements IDressRepository{
 	@Override
 	public void addDress(Dress dress) {
         
-		String sql="insert into dress(name,id,colour,brand,type,category,price,dsize) values(?,?,?,?,?,?,?,?)";
-		Object[] dressArray= {dress.getName(),dress.getId(),dress.getColour(),dress.getBrand(),dress.getType(),dress.getCategory(),dress.getPrice(),dress.getSize()};
+		String sql="insert into dress(name,id,colour,brand,type,category,price,dresssize) values(?,?,?,?,?,?,?,?)";
+		Object[] dressArray= {dress.getName(),dress.getId(),dress.getColour(),dress.getBrand(),dress.getType(),dress.getCategory(),dress.getPrice(),dress.getDresssize()};
 		jdbcTemplate.update(sql,dressArray);
 	}
 
@@ -60,7 +60,7 @@ public class DressRepositoryImpl implements IDressRepository{
 				dress1.setColour(rs.getString("colour"));
 				dress1.setBrand(rs.getString("brand"));
 				dress1.setType(rs.getString("type"));
-				dress1.setSize(rs.getString("size"));
+				dress1.setDresssize(rs.getString("dresssize"));
 				dress1.setCategory(rs.getString("category"));
 				dress1.setPrice(rs.getDouble("price"));
 				return dress1;

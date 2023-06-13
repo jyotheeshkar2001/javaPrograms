@@ -8,13 +8,13 @@ public class User {
 	private String dateOfBirth;
 	private String city;
 	private String email;
-	private String securityQuestion;
+	private String favouritecricketer;
 	private String uid;
 	private int password;
 	
 	
 	public User(String firstName, String middleName, String lastName, String dateOfBirth, String city, String email,
-			String securityQuestion, String uid, int password) {
+			String favouritecricketer, String uid, int password) {
 		super();
 		this.firstName = firstName;
 		this.middleName = middleName;
@@ -22,7 +22,7 @@ public class User {
 		this.dateOfBirth = dateOfBirth;
 		this.city = city;
 		this.email = email;
-		this.securityQuestion = securityQuestion;
+		this.favouritecricketer = favouritecricketer;
 		this.uid = uid;
 		this.password = password;
 	}
@@ -66,13 +66,15 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getSecurityQuestion() {
-		return securityQuestion;
-	}
-	public void setSecurityQuestion(String securityQuestion) {
-		this.securityQuestion = securityQuestion;
-	}
 	
+	
+	
+	public String getFavouritecricketer() {
+		return favouritecricketer;
+	}
+	public void setFavouritecricketer(String favouritecricketer) {
+		this.favouritecricketer = favouritecricketer;
+	}
 	public String getUid() {
 		return uid;
 	}
@@ -88,8 +90,8 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [firstName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName
-				+ ", dateOfBirth=" + dateOfBirth + ", city=" + city + ", email=" + email + ", securityQuestion="
-				+ securityQuestion + ", uid=" + uid + ", password=" + password + "]";
+				+ ", dateOfBirth=" + dateOfBirth + ", city=" + city + ", email=" + email + ", favouriteCricketer="
+				+ favouritecricketer + ", uid=" + uid + ", password=" + password + "]";
 	}
 	
 

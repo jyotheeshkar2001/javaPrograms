@@ -2,19 +2,18 @@ package com.dress.model;
 
 public class Dress {
 	private String name;
-	private Integer id;
+	private int id;
 	private String colour;
 	private String brand;
 	private String type;
 	private String category;
 	private double price;
-	private String size;
+	private String dresssize;
 	public Dress() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Dress(String name, Integer id, String colour, String brand, String type, String category, double price,
-			String size) {
+			String dresssize) {
 		super();
 		this.name = name;
 		this.id = id;
@@ -23,7 +22,7 @@ public class Dress {
 		this.type = type;
 		this.category = category;
 		this.price = price;
-		this.size = size;
+		this.dresssize = dresssize;
 	}
 	public String getName() {
 		return name;
@@ -67,16 +66,17 @@ public class Dress {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public String getSize() {
-		return size;
+	
+	public String getDresssize() {
+		return dresssize;
 	}
-	public void setSize(String size) {
-		this.size = size;
+	public void setDresssize(String dresssize) {
+		this.dresssize = dresssize;
 	}
 	@Override
 	public String toString() {
 		return "Clothing [name=" + name + ", id=" + id + ", colour=" + colour + ", brand=" + brand + ", type=" + type
-				+ ", category=" + category + ", price=" + price + ", size=" + size + "]";
+				+ ", category=" + category + ", price=" + price + ", dresssize=" + dresssize + "]";
 	}
 	
   

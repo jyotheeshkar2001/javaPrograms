@@ -9,15 +9,17 @@ public interface UserRepository {
 	
 	//boolean doesUserExist(String uid);
 	
-	void addUser(User user);
+	User addUser(User user);
 	
 	public User findByUid(String uid);
 	
 	public List<User> findAll();
 	
-	void updateUser(String uid, String city);
+	void updateUser(String uid, int password);
 	
 	void deleteUser(String uid);
+	
+	User login(String email,int password);
 	
 	
 

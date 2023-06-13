@@ -52,7 +52,7 @@ public class DressController {
 		return ResponseEntity.accepted().build();
 	}
 	
-	@PatchMapping("/dresses/id{id}/price/{price}")
+	@PatchMapping("/dresses/id/{id}/price/{price}")
 	ResponseEntity<Void> updateDress(@PathVariable("id")int id,@PathVariable("price") double price){
 		
 		dressService.updateDress(id, price);

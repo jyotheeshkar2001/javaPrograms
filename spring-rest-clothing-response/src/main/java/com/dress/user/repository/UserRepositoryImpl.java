@@ -19,10 +19,11 @@ public class UserRepositoryImpl implements UserRepository {
 	
 
 	@Override
-	public void addUser( User user) {
-		String sql="insert into users(firstName,middleName,lastName,dateOfBirth,city,email,securityQuestion,userid,password) values(?,?,?,?,?,?,?,?,?)";
-		Object[] arry= {user.getFirstName(),user.getMiddleName(),user.getLastName(),user.getDateOfBirth(),user.getCity(),user.getEmail(),user.getSecurityQuestion(),user.getUid(),user.getPassword()};
+	public User addUser(User user) {
+		String sql="insert into users(firstName,middleName,lastName,dateOfBirth,city,email,favouritecricketer,userid,password) values(?,?,?,?,?,?,?,?,?)";
+		Object[] arry= {user.getFirstName(),user.getMiddleName(),user.getLastName(),user.getDateOfBirth(),user.getCity(),user.getEmail(),user.getFavouritecricketer(),user.getUid(),user.getPassword()};
 		jdbcTemplate.update(sql,arry);
+		return user;
 		
 	}
 	
@@ -49,10 +50,10 @@ public class UserRepositoryImpl implements UserRepository {
 	}
 
 	@Override
-	public void updateUser(String uid, String city) {
-		String sql="update users set city=? where userId=?";
+	public void updateUser(String uid, int password) {
+		String sql="update users set password=? where userId=?";
 		
-		jdbcTemplate.update(sql,city,uid);
+		jdbcTemplate.update(sql,password,uid);
 		
 	}
 
@@ -63,6 +64,15 @@ public class UserRepositoryImpl implements UserRepository {
 		
 		jdbcTemplate.update(sql,uid);
 		
+	}
+
+	@Override
+	public User login(String email, int password) {
+		
+		String sql="select * from users where email=? and password=?";
+		User user=  jdbcTemplate.queryForObject(sql,new UserMapper(),email,password);
+		
+		return user;
 	}
 }
 
